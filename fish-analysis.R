@@ -18,3 +18,12 @@ ggplot(fishdata) +
   theme_presentation()
 
 
+## Chris's modifications
+
+ggplot() +
+  geom_histogram(data = fishdata, aes(x = scalelength, fill = length_cut), colour = "black", bins = 25) +
+  facet_wrap(~length_cut) +
+  coord_cartesian(ylim = c(0,500), xlim = c(0, 11), expand = FALSE) +
+  theme_classic() +
+  theme(legend.position = "none",
+        panel.spacing = unit(2, "lines"))
